@@ -1,0 +1,36 @@
+<nav class="bg-red-700 p-2 sticky top-0 z-50 shadow-2xl">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        
+        <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
+            <img src="logo.png" alt="Logo" class="h-16 w-auto drop-shadow-md">
+            <span class="text-2xl font-black tracking-tighter uppercase italic hidden sm:block">Frozen Hell</span>
+        </a>
+        
+        <div class="hidden md:flex space-x-8 font-semibold">
+            <a href="index.html" class="hover:text-black transition border-b-2 border-transparent hover:border-black">Home</a>
+            <a href="menu.html" class="hover:text-black transition border-b-2 border-transparent hover:border-black">Menu</a>
+            <a href="promotions.html" class="hover:text-black transition border-b-2 border-transparent hover:border-black">Promotions</a>
+            <a href="contact.html" class="hover:text-black transition border-b-2 border-transparent hover:border-black">Contact</a>
+        </div>
+
+        <button onclick="toggleMobileMenu()" class="md:hidden text-2xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-red-800 border-t border-red-900 animate-fade-in-down">
+        <div class="flex flex-col p-4 space-y-4 font-bold">
+            <a href="index.html" class="hover:bg-red-900 p-2 rounded">Home</a>
+            <a href="menu.html" class="hover:bg-red-900 p-2 rounded">Menu</a>
+            <a href="promotions.html" class="hover:bg-red-900 p-2 rounded">Promotions</a>
+            <a href="contact.html" class="hover:text-black transition">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+</script>
