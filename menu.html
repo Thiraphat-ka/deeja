@@ -13,22 +13,23 @@
             <a href="contact.html" class="hover:text-black transition border-b-2 border-transparent hover:border-black">Contact</a>
         </div>
 
-        <button onclick="toggleMobileMenu()" class="md:hidden text-2xl focus:outline-none">
+        <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 
-    <div id="mobileMenu" class="hidden md:hidden bg-red-800 border-t border-red-900 animate-fade-in-down">
+    <div id="mobileMenu" class="hidden md:hidden bg-red-800 border-t border-red-900">
         <div class="flex flex-col p-4 space-y-4 font-bold">
             <a href="index.html" class="hover:bg-red-900 p-2 rounded">Home</a>
             <a href="menu.html" class="hover:bg-red-900 p-2 rounded">Menu</a>
             <a href="promotions.html" class="hover:bg-red-900 p-2 rounded">Promotions</a>
-            <a href="contact.html" class="hover:text-black transition">Contact</a>
+            <a href="contact.html" class="hover:bg-red-900 p-2 rounded">Contact</a>
         </div>
     </div>
 </nav>
 
 <script>
+    // ฟังก์ชัน เปิด-ปิด เมนูในมือถือ
     function toggleMobileMenu() {
         const menu = document.getElementById('mobileMenu');
         menu.classList.toggle('hidden');
