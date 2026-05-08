@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozen Hell - Smoothies from the Deep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <nav class="bg-red-700 p-4 sticky top-0 z-50 shadow-2xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-white text-red-700 p-2 rounded-full w-10 h-10 flex items-center justify-center font-bold">FH</div>
+                <span class="text-2xl font-black tracking-tighter uppercase italic">Frozen Hell</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-semibold">
+                <a href="#" class="hover:text-black transition">Home</a>
+                <a href="#" class="hover:text-black transition">Menu</a>
+                <a href="#" class="hover:text-black transition">Promotions</a>
+                <a href="#" class="hover:text-black transition">Contact</a>
+            </div>
+
+            <button class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="py-20 text-center bg-gradient-to-b from-red-700 to-gray-900">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4">ICY COLD. DEVILISHLY GOOD.</h1>
+        <p class="text-gray-300 text-xl">น้ำปั่นที่เย็นสุดขั้ว จนหลุมศพยังต้องสั่นสะท้าน</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold mb-8 border-l-4 border-red-600 pl-4">Hellish Menu</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 group">
+                <div class="h-64 bg-blue-500 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&q=80&w=800" alt="smoothie" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Blue Inferno</h3>
+                    <p class="text-gray-400 text-sm mb-4">บลูเบอร์รี่ผสมมิ้นท์ เย็นจัดจนควันออกปาก</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-red-500">66.-</span>
+                        <button onclick="openModal('Blue Inferno')" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold transition">สั่งความตาย</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 group">
+                <div class="h-64 bg-red-500 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&q=80&w=800" alt="smoothie" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Blood Orange Sinner</h3>
+                    <p class="text-gray-400 text-sm mb-4">ส้มสีเลือดผสมพริกเกลือ รสชาติเข้มข้นถึงใจ</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-red-500">75.-</span>
+                        <button onclick="openModal('Blood Orange Sinner')" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold transition">สั่งความตาย</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-[100] p-4">
+        <div class="bg-gray-800 p-8 rounded-3xl max-w-sm w-full border-2 border-red-600 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <div class="text-center">
+                <i class="fas fa-skull text-red-600 text-5xl mb-4"></i>
+                <h2 class="text-2xl font-bold mb-2">ยืนยันคำสั่งซื้อ?</h2>
+                <p id="modalItemName" class="text-gray-300 mb-6 font-semibold"></p>
+                <div class="flex space-x-4">
+                    <button onclick="closeModal()" class="flex-1 bg-gray-700 py-3 rounded-xl font-bold">ยกเลิก</button>
+                    <button class="flex-1 bg-red-600 py-3 rounded-xl font-bold shadow-lg shadow-red-900/50">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(itemName) {
+            document.getElementById('modalItemName').innerText = itemName;
+            document.getElementById('orderModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
