@@ -97,13 +97,36 @@
     </div>
 
     <script>
-        function openModal(itemName) {
-            document.getElementById('modalItemName').innerText = itemName;
-            document.getElementById('orderModal').classList.remove('hidden');
+    // ฟังก์ชันเปิด-ปิดเมนูบนมือถือ
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const icon = document.getElementById('menuIcon');
+        
+        // สลับการแสดงผลเมนู
+        menu.classList.toggle('hidden');
+        
+        // สลับไอคอนระหว่างสามขีด (bars) กับ กากบาท (times)
+        if (menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
         }
-        function closeModal() {
-            document.getElementById('orderModal').classList.add('hidden');
-        }
-    </script>
+    }
+
+    // --- โค้ด Modal เดิมของที่รัก (เก็บไว้เหมือนเดิม) ---
+    function openModal(itemName) {
+        document.getElementById('modalItemName').innerText = itemName;
+        document.getElementById('orderModal').classList.remove('hidden');
+    }
+    function closeModal() {
+        document.getElementById('orderModal').classList.add('hidden');
+    }
+    function confirmOrder() {
+        alert('วิญญาณของคุณถูกบันทึกเรียบร้อย! เตรียมรับความเย็นจากนรกได้เลย');
+        closeModal();
+    }
+</script>
 </body>
 </html>
